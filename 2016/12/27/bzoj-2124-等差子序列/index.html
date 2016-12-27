@@ -1,0 +1,731 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=方正舒体:300,300italic,400,400italic,700,700italic|华文新魏:300,300italic,400,400italic,700,700italic|华文行楷:300,300italic,400,400italic,700,700italic|Monotype Corsiva:300,300italic,400,400italic,700,700italic|Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x54C8;&amp;#x5E0C; + &amp;#x6811;&amp;#x72B6;&amp;#x6570;&amp;#x7EC4;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bzoj 2124 等差子序列">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/bzoj-2124-等差子序列/index.html">
+<meta property="og:site_name" content="Tang-Dreamoon's Blog">
+<meta property="og:description" content="&amp;#x54C8;&amp;#x5E0C; + &amp;#x6811;&amp;#x72B6;&amp;#x6570;&amp;#x7EC4;">
+<meta property="og:updated_time" content="2016-12-27T09:37:10.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bzoj 2124 等差子序列">
+<meta name="twitter:description" content="&amp;#x54C8;&amp;#x5E0C; + &amp;#x6811;&amp;#x72B6;&amp;#x6570;&amp;#x7EC4;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/27/bzoj-2124-等差子序列/"/>
+
+
+
+
+
+  <title> bzoj 2124 等差子序列 | Tang-Dreamoon's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?89f639e6f54c56b621f2d11fceb84765";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Tang-Dreamoon's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">stay hungry stay foolish</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/27/bzoj-2124-等差子序列/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Harryang">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/t3.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Tang-Dreamoon's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Tang-Dreamoon's Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                bzoj 2124 等差子序列
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-27T17:00:56+08:00">
+                2016-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/❤程序❤/" itemprop="url" rel="index">
+                    <span itemprop="name">~❤程序❤~</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/❤程序❤/字符串/" itemprop="url" rel="index">
+                    <span itemprop="name">字符串</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/❤程序❤/字符串/hash/" itemprop="url" rel="index">
+                    <span itemprop="name">hash</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="&#x54C8;&#x5E0C;-&#x6811;&#x72B6;&#x6570;&#x7EC4;"><a href="#&#x54C8;&#x5E0C;-&#x6811;&#x72B6;&#x6570;&#x7EC4;" class="headerlink" title="&#x54C8;&#x5E0C; + &#x6811;&#x72B6;&#x6570;&#x7EC4;"></a>&#x54C8;&#x5E0C; + &#x6811;&#x72B6;&#x6570;&#x7EC4;</h2><a id="more"></a>
+<h3 id="&#x9898;&#x76EE;&#x94FE;&#x63A5;&#xFF1A;bzoj-2124"><a href="#&#x9898;&#x76EE;&#x94FE;&#x63A5;&#xFF1A;bzoj-2124" class="headerlink" title="&#x3000;&#x3000;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#xFF1A;bzoj 2124"></a>&#x3000;&#x3000;&#x9898;&#x76EE;&#x94FE;&#x63A5;&#xFF1A;<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2124" target="_blank" rel="external">bzoj 2124</a></h3><p><font size="4"> &#x3000;&#x3000;&#x9898;&#x610F;&#xFF1A;&#x5199; B z o j &#x7684;&#x9898;&#x610F;&#x5C31;&#x662F;&#x7B80;&#x5355;&#x2014;&#x2014;&#x9898;&#x610F;&#x89C1;&#x4E0A;&#x2026;&#x2026;</font></p>
+<p><font size="4"> &#x3000;&#x3000;&#x9898;&#x89E3;&#xFF1A;&#x65E2;&#x7136;&#x8FD9;&#x4E2A;&#x7B49;&#x5DEE;&#x5B50;&#x5E8F;&#x5217;&#x53EA;&#x6709;&#x4E09;&#x4E2A;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4ECE; 1 &#x5230; N &#x7684;&#x6392;&#x5217;&#x7684;&#x8BDD;&#xFF0C; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x679A;&#x4E3E;&#x4E00;&#x4E0B;&#x4E2D;&#x95F4;&#x90A3;&#x4E2A;&#x6570; X &#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x7B49;&#x5DEE;&#x5B50;&#x5E8F;&#x5217;&#x7684;&#x8BDD;&#xFF0C;&#x4EE5; X &#x4E3A;&#x4E2D;&#x5FC3;&#x5BF9;&#x79F0;&#x7684;&#x4E24;&#x4E2A;&#x70B9;&#x4E00;&#x5B9A;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x51FA;&#x73B0;&#x8FC7;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x8FD8;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x8FC7;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x96F6;&#x4E00;&#x6743;&#x503C;&#x4E32;&#x6765;&#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x6570;&#x6709;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x8FC7;&#xFF0C;&#x5982;&#x679C;&#x4EE5; X &#x4E3A;&#x4E2D;&#x5FC3;&#x4E24;&#x4E2A;&#x5BF9;&#x79F0;&#x7684;&#x534A;&#x5F84;&#x76F8;&#x7B49;&#x7684;&#x96F6;&#x4E00;&#x4E32;&#x6709;&#x4E00;&#x4F4D;&#x4E0D;&#x540C;&#xFF0C;&#x5373;&#x5F02;&#x6216;&#x8D77;&#x6765;&#x4E0D;&#x4E3A;&#x96F6;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x627E;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x7B49;&#x5DEE;&#x5B50;&#x5E8F;&#x5217;&#x3002;&#x5982;&#x4F55;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x4E32;&#x5462;&#xFF1F;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x4F1F;&#x5927;&#x7684;&#x54C8;&#x5E0C;&#x554A;&#xFF01;</font></p>
+<p><font size="4"> &#x3000;&#x3000;&#x6211;&#x601D;&#x6545;&#x6211;&#x5728;&#xFF1A;&#x663E;&#x7136;&#x8FD9;&#x4E2A;&#x9898;&#x4E0D;&#x53EF;&#x80FD;&#x66B4;&#x529B;&#x7684;&#x8BA1;&#x7B97;&#x54C8;&#x5E0C;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x80AF;&#x5B9A;&#x5F97;&#x7528;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7EF4;&#x62A4;&#x4E00;&#x4E0B;&#x54C8;&#x5E0C;&#x503C;&#xFF0C;&#x8FD9;&#x9053;&#x9898;&#x6211;&#x7528;&#x7684;&#x662F;&#x6811;&#x72B6;&#x6570;&#x7EC4;&#xFF0C;&#x6211;&#x4EEC;&#x5F53;&#x7136;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;&#x7EBF;&#x6BB5;&#x6811;&#x5566;&#xFF01;&#x4E0D;&#x8FC7;&#x53EA;&#x8981;&#x4E00;&#x505A;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x90A3;&#x5C31;&#x662F;&#x5DE6;&#x53F3;&#x8FD9;&#x4E24;&#x4E2A;&#x4E32;&#x201C;&#x65B9;&#x5411;&#x201D;&#x662F;&#x76F8;&#x53CD;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x6B63;&#x53CD;&#x4E24;&#x4E2A;&#x6811;&#x72B6;&#x6570;&#x7EC4;&#x3002;<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span>  modd=<span class="number">1000000009l</span>l;</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span>  shu[<span class="number">10100</span>];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span>  zzu[<span class="number">10100</span>];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span>  tot[<span class="number">10100</span>];</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mak</span><span class="params">()</span></span></div><div class="line">{</div><div class="line">	tot[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">10001</span>;i++)</div><div class="line">	{</div><div class="line">		tot[i]=tot[i<span class="number">-1</span>]*<span class="number">2</span>%modd;</div><div class="line">	}</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add1</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">{</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=n;i=i+(i&amp;-i))</div><div class="line">	{</div><div class="line">		shu[i]=(shu[i]+tot[i-x+<span class="number">1</span>])%modd;</div><div class="line">	}</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add2</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">{</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&gt;=<span class="number">1</span>;i=i-(i&amp;-i))</div><div class="line">	{</div><div class="line">		zzu[i]=(zzu[i]+tot[x-i+<span class="number">1</span>])%modd;</div><div class="line">	}</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span>  <span class="title">ask1</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">{</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span>  ans=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&gt;=<span class="number">1</span>;i=i-(i&amp;-i))</div><div class="line">	{</div><div class="line">		ans=(ans+shu[i]*tot[x-i+<span class="number">1</span>]%modd)%modd;</div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span>  <span class="title">ask2</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">{</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span>  ans=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=n;i=i+(i&amp;-i))</div><div class="line">	{</div><div class="line">		ans=(ans+zzu[i]*tot[i-x+<span class="number">1</span>]%modd)%modd;</div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">}</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">{</div><div class="line">	mak();</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)</div><div class="line">	{</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">		{</div><div class="line">			<span class="keyword">int</span> x;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</div><div class="line">			<span class="keyword">int</span> lena=min(x<span class="number">-1</span>,n-x);</div><div class="line">			<span class="keyword">if</span>(lena==<span class="number">0</span>){add1(x),add2(x);<span class="keyword">continue</span>;}</div><div class="line">			<span class="keyword">long</span> <span class="keyword">long</span>  first=(ask1(x<span class="number">-1</span>)-ask1(x-lena<span class="number">-1</span>)*tot[lena+<span class="number">1</span>]%modd+modd)%modd;</div><div class="line">			<span class="keyword">long</span> <span class="keyword">long</span>  secon=(ask2(x+<span class="number">1</span>)-ask2(x+lena+<span class="number">1</span>)*tot[lena+<span class="number">1</span>]%modd+modd)%modd;</div><div class="line">		<span class="comment">//	cout&lt;&lt;x&lt;&lt;&quot; &quot;&lt;&lt;first&lt;&lt;&quot; &quot;&lt;&lt;secon&lt;&lt;endl;</span></div><div class="line">			<span class="keyword">if</span>((first^secon)!=<span class="number">0</span>)</div><div class="line">			{</div><div class="line">			<span class="comment">//	cout&lt;&lt;x&lt;&lt;endl;</span></div><div class="line">				<span class="built_in">puts</span>(<span class="string">&quot;Y&quot;</span>);</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">				{</div><div class="line">					<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</div><div class="line">				}</div><div class="line">				<span class="keyword">goto</span> Ed;</div><div class="line">			}</div><div class="line">			add1(x),add2(x);</div><div class="line">		}</div><div class="line">		<span class="built_in">puts</span>(<span class="string">&quot;N&quot;</span>);</div><div class="line">		Ed:</div><div class="line">		<span class="built_in">memset</span>(shu,<span class="number">0</span>,<span class="keyword">sizeof</span>(shu));</div><div class="line">		<span class="built_in">memset</span>(zzu,<span class="number">0</span>,<span class="keyword">sizeof</span>(zzu));</div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure></font></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/27/bzoj-3555-企鹅QQ/" rel="next" title="bzoj 3555 企鹅QQ">
+                <i class="fa fa-chevron-left"></i> bzoj 3555 企鹅QQ
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/t3.png"
+               alt="Harryang" />
+          <p class="site-author-name" itemprop="name">Harryang</p>
+          <p class="site-description motion-element" itemprop="description">自己选择的路，跪着也要走完！</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              OI神犇
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/neighthorn/" title="sxy" target="_blank">sxy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/dugudashen/RecentComments.html" title="lmy" target="_blank">lmy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/juruolty/" title="lty" target="_blank">lty</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/ezyzy/" title="yzy" target="_blank">yzy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/yousiki/" title="ysq" target="_blank">ysq</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/qq_31785871" title="ryc" target="_blank">ryc</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/mirrorgray?viewmode=contents" title="dz-lyh" target="_blank">dz-lyh</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://oblivious137.github.io/" title="dy-lh" target="_blank">dy-lh</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希-树状数组"><span class="nav-number">1.</span> <span class="nav-text">哈希 + 树状数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目链接：bzoj-2124"><span class="nav-number">1.1.</span> <span class="nav-text">　　题目链接：bzoj 2124</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Harryang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
