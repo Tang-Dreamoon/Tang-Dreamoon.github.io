@@ -108,16 +108,16 @@
 
 
 
-<meta name="description" content="一个不是网络流的最小割（stoer_wagner算法）">
+<meta name="description" content="线性基模板题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poj 2914 最小割集">
-<meta property="og:url" content="http://yoursite.com/2016/12/22/poj-2914-最小割集/index.html">
+<meta property="og:title" content="bzoj 2844 albus就是要第一个出场">
+<meta property="og:url" content="http://yoursite.com/2017/07/22/bzoj-2844-albus就是要第一个出场/index.html">
 <meta property="og:site_name" content="Tang-Dreamoon's Blog">
-<meta property="og:description" content="一个不是网络流的最小割（stoer_wagner算法）">
-<meta property="og:updated_time" content="2016-12-22T03:30:22.921Z">
+<meta property="og:description" content="线性基模板题">
+<meta property="og:updated_time" content="2017-07-22T14:57:59.567Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poj 2914 最小割集">
-<meta name="twitter:description" content="一个不是网络流的最小割（stoer_wagner算法）">
+<meta name="twitter:title" content="bzoj 2844 albus就是要第一个出场">
+<meta name="twitter:description" content="线性基模板题">
 
 
 
@@ -145,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/22/poj-2914-最小割集/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/22/bzoj-2844-albus就是要第一个出场/"/>
 
 
 
 
 
-  <title> poj 2914 最小割集 | Tang-Dreamoon's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> bzoj 2844 albus就是要第一个出场 | Tang-Dreamoon's Blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/poj-2914-最小割集/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/bzoj-2844-albus就是要第一个出场/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Harryang">
@@ -296,7 +296,7 @@
             
             
               
-                poj 2914 最小割集
+                bzoj 2844 albus就是要第一个出场
               
             
           </h1>
@@ -309,8 +309,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T11:06:15+08:00">
-                2016-12-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-22T22:40:24+08:00">
+                2017-07-22
               </time>
             
 
@@ -339,19 +339,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/❤程序❤/网络流/" itemprop="url" rel="index">
-                    <span itemprop="name">网络流</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/❤程序❤/网络流/最小割/" itemprop="url" rel="index">
-                    <span itemprop="name">最小割</span>
+                  <a href="/categories/❤程序❤/线性基/" itemprop="url" rel="index">
+                    <span itemprop="name">线性基</span>
                   </a>
                 </span>
 
@@ -385,10 +374,10 @@
       
 
       
-        <h2 id="一个不是网络流的最小割（stoer-wagner算法）"><a href="#一个不是网络流的最小割（stoer-wagner算法）" class="headerlink" title="一个不是网络流的最小割（stoer_wagner算法）"></a>一个不是网络流的最小割（stoer_wagner算法）</h2><a id="more"></a> 
-<h3 id="题目链接：poj-2914"><a href="#题目链接：poj-2914" class="headerlink" title="　　题目链接：poj 2914"></a>　　题目链接：<a href="http://poj.org/problem?id=2914" target="_blank" rel="external">poj 2914</a></h3><p><font size="4"> 　　题意：给定一个带权的无向图，求割掉最少权值的边，使图不连通。（即带权边连通度）</font></p>
-<p><font size="4"> 　　题解：比较暴力的做法是固定一个源点，然后枚举所有的汇点求最小割，找其中最小的一个，就是整个图的边连通度。可是这个复杂度显然是（N ^ 3 * M）的——碰巧这个题过不去，⊙﹏⊙汗。所以我们只能用牛逼的鸡肋算法 stoer_wagner ，讲道理本人并不是特别明白这个算法的原理和正确性，而且相信我，全百度没有一个人会的。在此转载一个个人感觉将算法步骤解释的比较清楚的博客：<a href="http://www.hankcs.com/program/algorithm/poj-2914-minimum-cut.html" target="_blank" rel="external">大佬的博客</a>。</font></p>
-<p><font size="4"> 　　我思故我在：人生中第一个没有理解就背过了的模板。烦……<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n,m;</div><div class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">505</span>][<span class="number">505</span>],w[<span class="number">505</span>],v[<span class="number">505</span>];</div><div class="line"><span class="keyword">bool</span> vis[<span class="number">505</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> a &lt; b ? a : b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> mina=<span class="number">2147483647</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">		v[i]=i;</div><div class="line">	<span class="keyword">while</span>(n&gt;<span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> last=<span class="number">0</span>;</div><div class="line">		<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</div><div class="line">		<span class="built_in">memset</span>(w,<span class="number">0</span>,<span class="keyword">sizeof</span>(w));</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">int</span> k=<span class="number">-1</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;n;j++)</div><div class="line">			&#123;</div><div class="line">				<span class="keyword">if</span>(!vis[v[j]])</div><div class="line">				&#123;</div><div class="line">					w[v[j]]+=<span class="built_in">map</span>[v[last]][v[j]];</div><div class="line">					<span class="keyword">if</span>(k==<span class="number">-1</span>||w[v[j]]&gt;w[v[k]])</div><div class="line">						k=j;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			vis[v[k]]=<span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i==n<span class="number">-1</span>)</div><div class="line">			&#123;</div><div class="line">				mina=min(mina,w[v[k]]);</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</div><div class="line">				&#123;</div><div class="line">					<span class="built_in">map</span>[v[last]][v[j]]+=<span class="built_in">map</span>[v[j]][v[k]];</div><div class="line">					<span class="built_in">map</span>[v[j]][v[last]]+=<span class="built_in">map</span>[v[j]][v[k]];</div><div class="line">				&#125;</div><div class="line">				v[k]=v[--n];</div><div class="line">			&#125;</div><div class="line">			last=k;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> mina;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">memset</span>(<span class="built_in">map</span>,<span class="number">0</span>,<span class="keyword">sizeof</span>(<span class="built_in">map</span>));</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">int</span> x,y,z;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;x,&amp;y,&amp;z);</div><div class="line">			<span class="built_in">map</span>[x][y]+=z;</div><div class="line">			<span class="built_in">map</span>[y][x]+=z; </div><div class="line">		&#125;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,work());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></font></p>
+        <h2 id="线性基模板题"><a href="#线性基模板题" class="headerlink" title="线性基模板题"></a>线性基模板题</h2><a id="more"></a>
+<h3 id="题目链接：bzoj-2844"><a href="#题目链接：bzoj-2844" class="headerlink" title="　　题目链接：bzoj 2844"></a>　　题目链接：<a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2844" target="_blank" rel="external">bzoj 2844</a></h3><p><font size="4"> 　　题意：写 B z o j 的题意就是简单——题意见上……</font></p>
+<p><font size="4"> 　　题解：题目本意就是求不去重异或空间中 X 排在第几。求出异或空间的秩 M，则去重异或空间的大小为2^m，不去重异或空间的大小为2^n。任何一个包含线性基的子集都能够构成整个异或空间，故每一种非线性基的取法与线性基组合，都能够将整个异或空间遍历一次。故去重异或空间中的每个值在不去重异或空间中都出现2^(n-m)次。所以我们可以使用数位 DP 与线性基在去重异或空间内求出比 X 小的有几个，乘2^(n-m)+1就是答案了。</font></p>
+<p><font size="4"> 　　我思故我在：虽然这是一个水题——线性基的模板题，但我还是犯了一个十分脑残、智障、二逼、逗逼、水水的错误，咳咳~注意！N 很大 2^(n-m) 不能直接靠左移得出……<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n,k;</div><div class="line"><span class="keyword">int</span> modd=<span class="number">10086</span>;</div><div class="line"><span class="keyword">int</span> <span class="built_in">stack</span>[<span class="number">100100</span>];</div><div class="line"><span class="keyword">bool</span> vis[<span class="number">100100</span>];</div><div class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">100100</span>];</div><div class="line"><span class="keyword">int</span> er[<span class="number">100100</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> maxa=<span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> fr=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>(!vis[i])</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span>(<span class="built_in">stack</span>[i]&gt;maxa)</div><div class="line">			&#123;</div><div class="line">				maxa=<span class="built_in">stack</span>[i],fr=i;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> fr;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">make</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="built_in">map</span>[<span class="number">1</span>]=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">65566</span>;i++)</div><div class="line">		<span class="built_in">map</span>[i]=<span class="built_in">map</span>[i/<span class="number">2</span>]+<span class="number">1</span>;</div><div class="line">	er[<span class="number">0</span>]=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100000</span>;i++)</div><div class="line">		er[i]=(er[i<span class="number">-1</span>]*<span class="number">2</span>)%modd;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">return</span> a&gt;b;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	make();</div><div class="line">	<span class="keyword">int</span> tot=<span class="number">0</span>;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;<span class="built_in">stack</span>[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</div><div class="line">	<span class="keyword">int</span> head;</div><div class="line">	<span class="keyword">while</span>(head=find())</div><div class="line">	&#123;</div><div class="line">		tot++;</div><div class="line">		<span class="keyword">int</span> x=(<span class="built_in">stack</span>[head]&gt;&gt;<span class="number">16</span>),now;</div><div class="line">		<span class="keyword">if</span>(x==<span class="number">0</span>) now=<span class="built_in">map</span>[<span class="built_in">stack</span>[head]];</div><div class="line">		<span class="keyword">else</span> now=<span class="built_in">map</span>[x]+<span class="number">16</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span>(((<span class="number">1</span>&lt;&lt;now)&amp;<span class="built_in">stack</span>[i])!=<span class="number">0</span>&amp;&amp;i!=head)</div><div class="line">			&#123;</div><div class="line">				<span class="built_in">stack</span>[i]=<span class="built_in">stack</span>[i]^<span class="built_in">stack</span>[head];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		vis[head]=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	sort(<span class="built_in">stack</span>+<span class="number">1</span>,<span class="built_in">stack</span>+<span class="number">1</span>+n,cmp);</div><div class="line">	<span class="keyword">int</span> now=<span class="number">0</span>;</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">if</span>((now^<span class="built_in">stack</span>[i])&lt;=k)</div><div class="line">		&#123;</div><div class="line">			now=now^<span class="built_in">stack</span>[i];</div><div class="line">			ans=(ans+er[tot-i]%modd)%modd;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	ans=(ans*er[n-tot]%modd+<span class="number">1</span>)%modd;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></font></p>
 
       
     </div>
@@ -415,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/20/poj-3680-最小费用最大流/" rel="next" title="poj 3680 最小费用最大流">
-                <i class="fa fa-chevron-left"></i> poj 3680 最小费用最大流
+              <a href="/2017/07/22/无题/" rel="next" title="无题">
+                <i class="fa fa-chevron-left"></i> 无题
               </a>
             
           </div>
@@ -424,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/22/poj-1815-字典序最小最小割/" rel="prev" title="poj 1815 字典序最小最小割">
-                poj 1815 字典序最小最小割 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个不是网络流的最小割（stoer-wagner算法）"><span class="nav-number">1.</span> <span class="nav-text">一个不是网络流的最小割（stoer_wagner算法）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目链接：poj-2914"><span class="nav-number">1.1.</span> <span class="nav-text">　　题目链接：poj 2914</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性基模板题"><span class="nav-number">1.</span> <span class="nav-text">线性基模板题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目链接：bzoj-2844"><span class="nav-number">1.1.</span> <span class="nav-text">　　题目链接：bzoj 2844</span></a></li></ol></li></ol></div>
             
 
           </div>
